@@ -60,7 +60,7 @@ jobs:
         run: ssh my-vm '~/redeploy-site.sh'
 
       - name: Check Docker Compose Status
-        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
 
       - name: "🚀 Deployment Successful"
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
